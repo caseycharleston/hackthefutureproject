@@ -16,8 +16,9 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Navigator>
       <Stack.Screen name="Register"
+          options={{headerShown: false}}
           component={Register}
         />
         <Stack.Screen name="Login"
@@ -25,7 +26,8 @@ export default function App() {
           component={Login}
         />
         <Stack.Screen name="Home"
-          component={Home}
+        component={Home}
+        options={{headerShown: false}}
         />
         <Stack.Screen name="Profile"
           options={{headerShown: false}}
@@ -36,19 +38,51 @@ export default function App() {
           component={Explore}
         />
         <Stack.Screen name="HTF"
-          options={{headerShown: false}}
+          options={{
+          headerStyle: {
+            backgroundColor: '#D19F3D',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
           component={HTF}
         />
         <Stack.Screen name="March"
-          options={{headerShown: false}}
+        options={{
+          headerStyle: {
+            backgroundColor: '#D19F3D',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
           component={March}
         />
           <Stack.Screen name="Leaderboard"
-          options={{headerShown: false}}
+          options={{
+          headerStyle: {
+            backgroundColor: '#D19F3D',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
           component={Leaderboard}
         />
           <Stack.Screen name="Events"
-          options={{headerShown: false}}
+          options={{
+          headerStyle: {
+            backgroundColor: '#D19F3D',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
           component={Events}
         />
       </Stack.Navigator>

@@ -34,6 +34,7 @@ function compare( user1, user2 ) {
         this.feed = []; // this user's posts
         this.following = []; // users this person follows
         this.followers = []; // who is following this user
+        this.posts = []; // user's posts
     }
     getName() {
         return this.name;
@@ -56,12 +57,36 @@ function compare( user1, user2 ) {
     }
 
     follow(user) {
+        this.following.push(user);
 
     }
 
-    get followers() {
+    getFollowers() {
         return this.followers;
+    }
+
+    getFollowing() {
+        return this.following;
+    }
+
+    getPosts() {
+        return this.posts;
     }
 }
 
+register ("Shruti" ,"bbc");
+register("Casey",":)");
+register("Eliza","17")
+
+userbase[0].points = 2202;
+userbase[1].points = 1029;
+userbase[2].points = 1118;
+
+userbase[0].followers = [userbase[1], userbase[2]];
+userbase[1].followers = [userbase[0], userbase[2]];
+userbase[2].followers = [userbase[1], userbase[0]];
+
+userbase[0].following = [userbase[1], userbase[2]];
+userbase[1].following = [userbase[0], userbase[2]];
+userbase[2].following = [userbase[1], userbase[0]];
 
