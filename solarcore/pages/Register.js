@@ -17,7 +17,7 @@ export default function Register({ navigation }) {
   const handleRegisterPress = () => {
     // Send username and password to server for authentication
     register(username, password);
-    navigation.navigate('Leaderboard', {
+    navigation.navigate('Explore', {
       username: username,
       navigation: navigation,
     })

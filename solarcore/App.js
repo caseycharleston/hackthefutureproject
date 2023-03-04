@@ -37,7 +37,7 @@ export default function App() {
           options={{headerShown: false}}
           component={Explore}
         />
-        <Stack.Screen name="HTF"
+        <Stack.Screen name="Hack the Future 2023"
           options={{
           headerStyle: {
             backgroundColor: '#D19F3D',
