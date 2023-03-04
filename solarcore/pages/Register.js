@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import {register, checkLogin} from './userbase';
 
-export default function Login({ navigation }) {
+export default function Register({ navigation }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -14,29 +14,24 @@ export default function Login({ navigation }) {
     setPassword(text);
   };
 
-  const handleLoginPress = () => {
+  const handleRegisterPress = () => {
     // Send username and password to server for authentication
-    if (checkLogin(username, password)) {
-      console.log(username);
-      navigation.navigate('Profile', {name: username})
-    } else {
-
-    }
-
+    register(username, password);
+    navigation.navigate('Profile', {name: username})
   };
   
   return (
     <View style={styles.container}>
-      <Text style={styles.slogan}>
+        <Text style={styles.slogan}>
         Be sustainable and grow your core
-      </Text>
-      <Text style={styles.title}>SOLARCORE</Text>
+        </Text>
+        <Text style={styles.title}>SOLARCORE</Text>
       <Image 
         style={styles.image} 
         source={require('./solarcore.png')} 
       />
       <Text>
-        Login
+        sign up
       </Text>
       <TextInput
         style={styles.input}
@@ -51,11 +46,11 @@ export default function Login({ navigation }) {
         onChangeText={handlePasswordInput}
         value={password}
       />
-      <TouchableOpacity style={styles.button} onPress={handleLoginPress}>
-        <Text style={styles.buttonText}>Login</Text>
+      <TouchableOpacity style={styles.button} onPress={handleRegisterPress}>
+        <Text style={styles.buttonText}>Sign Up</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={ () => navigation.navigate('Register')}>
-        <Text style={styles.signUpText}>Sign Up</Text>
+      <TouchableOpacity onPress={ () => navigation.navigate('Login')}>
+        <Text style={styles.signUpText}>Sign In</Text>
       </TouchableOpacity>
     </View>
   );
@@ -74,12 +69,12 @@ const styles = StyleSheet.create({
     padding: 10,
     textAlign: 'center',
   },
-  
+
   title: {
     top: '10%',
     fontSize: 35,
   },
-
+  
   image: {
     marginTop: 100,
     marginBottom: 50,
@@ -117,4 +112,5 @@ const styles = StyleSheet.create({
     padding: 10,
     color: '#D19F3D',
   }
+
 });
