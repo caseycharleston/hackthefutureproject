@@ -1,7 +1,8 @@
 import React from 'react';
 import { ScrollView, View, StyleSheet, Image, FlatList, TouchableOpacity, Text} from 'react-native';
 
-export default function Explore({ navigation }) {
+
+export default function Explore({ username, navigation }) {
     return (
     <ScrollView style={styles.scrollContent}>
         <TouchableOpacity style={styles.touchContent} onPress={() => navigation.navigate('Hack the Future 2023')}>
@@ -22,11 +23,50 @@ export default function Explore({ navigation }) {
     );
 }
 
+const BottomBar = ({username, navigation}) => {
+    return (
+      <View style={styles.bottom}>
+      <TouchableOpacity 
+        style={styles.bottom}>
+        <Image 
+          style={styles.globe}
+          source={require('./globe.png')}
+        />
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.bottom}>
+        <Image
+          style={styles.icon}
+          source={require('./add.png')}
+        />
+      </TouchableOpacity>
+      <TouchableOpacity 
+        style={styles.bottom} 
+        onPress={() =>{navigation.navigate('Profile', {
+          username: username,
+          navigation: navigation,
+        })}}>
+        <Image
+          style={styles.icon}
+          source={require('./profile.png')}
+        />
+      </TouchableOpacity>
+      </View>
+    );
+  }
+
+  const Separate = () => {
+    return (
+      <View style={{flexDirection: 'row', alignItems: 'center'}}>
+        <View style={{flex: 1, height: 1, backgroundColor: '#D3D3D3'}} />
+      </View>
+    )
+  }
+
 const styles = StyleSheet.create({
 
     scrollContent: {
         flex: 1,
-        margin: 20,
+        margin: 10,
     },
 
     eventText: {
@@ -47,7 +87,7 @@ const styles = StyleSheet.create({
         shadowOffset: {width: 0, height: 5},
         shadowOpacity: 0.4,
         borderRadius: 20,
-        margin: 10,
+        margin: 20,
     },
 
     image: {
@@ -56,6 +96,33 @@ const styles = StyleSheet.create({
         height: '100%',
         borderBottomLeftRadius: 20,
         borderBottomRightRadius: 20,
+    },
+
+    bottom: {
+      backgroundColor: 'white',
+      flexDirection: 'row',
+      flex: 1,
+      width: '100%',
+      height: 10,
+      justifyItems: 'center',
+      alignItems: 'center',
+    },
+
+    globe: {
+      resizeMode: 'contain',
+      flex: 1,
+      flexDirection: 'row',
+      width: 150,
+      height: 150,
+      marginTop: 10,
+    },
+
+    icon: {
+      resizeMode: 'contain',
+      flex: 1,
+      flexDirection: 'row',
+      width: 150,
+      height: 150,
     },
 
     ray: {

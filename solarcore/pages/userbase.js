@@ -25,6 +25,15 @@ function compare( user1, user2 ) {
     return user2.getPoints() - user1.getPoints();
   }
   
+export function getUserInfo(username) {
+  for (let i = 0; i < userbase.length; i++) {
+    if (userbase[i].getName() === username) {
+      return userbase[i];
+    }
+  }
+  return userbase[userbase.length - 1];
+}
+
  class User {
     constructor(name, password) {
         this.name = name; // username
@@ -51,17 +60,7 @@ function compare( user1, user2 ) {
         this.points + points;
     }
 
-    post() {
-
-    }
-
-    follow(user) {
-
-    }
-
     get followers() {
         return this.followers;
     }
 }
-
-

@@ -17,11 +17,12 @@ export default function Login({ navigation }) {
   const handleLoginPress = () => {
     // Send username and password to server for authentication
     if (checkLogin(username, password)) {
-      navigation.navigate('Profile', {name: username})
+      navigation.navigate('Profile',
+      {username: username,
+        navigation: navigation})
     } else {
-
+      navigation.navigate('Register')
     }
-
   };
   
   return (

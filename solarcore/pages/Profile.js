@@ -1,6 +1,8 @@
 import { View, StyleSheet, TouchableOpacity, Image, Text, ScrollView } from 'react-native'
+import {getUserInfo} from './userbase'
 
 export default function Profile({username, navigation}) {
+  const user = getUserInfo(username)
     const TopBar = () => {
     return (
       <View> 
@@ -10,35 +12,47 @@ export default function Profile({username, navigation}) {
        />
       </View>
     );
-  };
+  }
 
   const Middle = () => {
     return (
       <View style={styles.middle}>
-        <ScrollView horizontal={true}>
-        </ScrollView>
+          <Text style={styles.middleText}>Welcome {user.getName()}!</Text>
+          <Text style={styles.middleText}>You have {user.getPoints()} Rays</Text>
       </View>
     );
-  };
+  }
 
   const BottomBar = () => {
     return (
       <View style={styles.bottom}>
+      <TouchableOpacity 
+        style={styles.bottom}
+        onPress={() =>{navigation.navigate('Explore',
+        {username: username,
+        navigation: navigation})}}>
         <Image 
           style={styles.globe}
           source={require('./globe.png')}
         />
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() =>{navigation.navigate('Explore',
+      {username: username,
+       navigation: navigation})}}>
         <Image
           style={styles.icon}
           source={require('./add.png')}
         />
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.bottom}>
         <Image
           style={styles.icon}
           source={require('./profile.png')}
         />
+      </TouchableOpacity>
       </View>
     );
-  };
+  }
 
   const Separate = () => {
     return (
@@ -67,7 +81,7 @@ export default function Profile({username, navigation}) {
     },
 
     image: {
-      marginTop: 20,
+      marginTop: 50,
       marginBottom: 10,
       width: 70,
       height: 70,
@@ -78,6 +92,13 @@ export default function Profile({username, navigation}) {
       width: '100%',
       backgroundColor: 'white',
       
+    },
+
+    middleText: {
+      fontSize: 50,
+      fontWeight: 'bold',
+      justifyItems: 'center',
+      alignItems: 'center',
     },
 
     bottom: {
