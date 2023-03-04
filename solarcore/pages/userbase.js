@@ -21,7 +21,7 @@ export function getHighestPoints() {
     });
 }
 function compare( user1, user2 ) {
-    return user1.getPoints() - user2.getPoints();
+    return user2.getPoints() - user1.getPoints();
   }
   
  class User {
