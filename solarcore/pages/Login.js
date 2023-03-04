@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'react-native';
-import {register, checkLogin} from './userbase';
 
 export default function Login({ navigation }) {
   const [username, setUsername] = useState('');
@@ -15,23 +14,15 @@ export default function Login({ navigation }) {
   };
 
   const handleLoginPress = () => {
-    // Send username and password to server for authentication
-    navigation.navigate('Profile', {name: username})
+    navigation.navigate('Profile', {name: {username}})
   };
   
   return (
     <View style={styles.container}>
-      <Text style={styles.slogan}>
-        Be sustainable and grow your core
-      </Text>
-      <Text style={styles.title}>SOLARCORE</Text>
       <Image 
         style={styles.image} 
         source={require('./solarcore.png')} 
       />
-      <Text>
-        Login
-      </Text>
       <TextInput
         style={styles.input}
         placeholder="Username"
@@ -45,13 +36,8 @@ export default function Login({ navigation }) {
         onChangeText={handlePasswordInput}
         value={password}
       />
-      <TouchableOpacity 
-        style={styles.button} 
-        onPress={handleLoginPress}>
+      <TouchableOpacity style={styles.button} onPress={handleLoginPress}>
         <Text style={styles.buttonText}>Login</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={ () => navigation.navigate('Register')}>
-        <Text style={styles.signUpText}>Sign Up</Text>
       </TouchableOpacity>
     </View>
   );
@@ -63,19 +49,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#fff',
   },
-
-  slogan: {
-    top: '10%',
-    fontSize: 30,
-    padding: 10,
-    textAlign: 'center',
-  },
   
-  title: {
-    top: '10%',
-    fontSize: 35,
-  },
-
   image: {
     marginTop: 100,
     marginBottom: 50,
@@ -108,9 +82,4 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
   },
-
-  signUpText: {
-    padding: 10,
-    color: '#D19F3D',
-  }
 });

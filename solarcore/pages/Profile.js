@@ -51,7 +51,6 @@ export default function Profile({username, navigation, icon}) {
   return (
     <View style={styles.top}>
       <TopBar/>
-      <Text>{username}</Text>
       <Separate/>
       <Middle/>
       <Separate/>
@@ -70,8 +69,8 @@ export default function Profile({username, navigation, icon}) {
     image: {
       marginTop: 20,
       marginBottom: 10,
-      width: 100,
-      height: 100,
+      width: 70,
+      height: 70,
     },
 
     middle: {
