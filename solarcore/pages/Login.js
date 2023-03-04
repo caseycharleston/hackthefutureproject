@@ -15,7 +15,7 @@ export default function Login({ navigation }) {
 
   const handleLoginPress = () => {
     // Send username and password to server for authentication
-    navigation.navigate('Profile', {name: username})
+    navigation.navigate('Profile', {name: {username}})
   };
   
   return (
@@ -37,7 +37,9 @@ export default function Login({ navigation }) {
         onChangeText={handlePasswordInput}
         value={password}
       />
-      <TouchableOpacity style={styles.button} onPress={handleLoginPress}>
+      <TouchableOpacity 
+        style={styles.button} 
+        onPress={handleLoginPress}>
         <Text style={styles.buttonText}>Login</Text>
       </TouchableOpacity>
     </View>
