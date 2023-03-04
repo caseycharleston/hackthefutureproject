@@ -22,7 +22,7 @@ export default function Login({ navigation }) {
     <View style={styles.container}>
       <Image 
         style={styles.image} 
-        source={require('./solarcore (3).png')} 
+        source={require('./solarcore.png')} 
       />
       <TextInput
         style={styles.input}
