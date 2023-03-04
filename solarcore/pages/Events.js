@@ -1,8 +1,9 @@
+
 import React from 'react';
 import { ScrollView, View, StyleSheet, Image, FlatList, TouchableOpacity, Text} from 'react-native';
 
 
-export default function Explore({ username, navigation }) {
+export default function Events({ username, navigation }) {
     return (
     <ScrollView style={styles.scrollContent}>
         <TouchableOpacity style={styles.touchContent} onPress={() => navigation.navigate('Hack the Future 2023')}>
@@ -82,10 +83,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#fff',
-        shadowColor: 'black',
-        shadowRadius: 1,
-        shadowOffset: {width: 0, height: 5},
-        shadowOpacity: 0.4,
         borderRadius: 20,
         margin: 20,
     },

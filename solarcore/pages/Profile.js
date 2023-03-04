@@ -36,7 +36,7 @@ export default function Profile({username, navigation}) {
           source={require('./globe.png')}
         />
       </TouchableOpacity>
-      <TouchableOpacity onPress={() =>{navigation.navigate('Explore',
+      <TouchableOpacity onPress={() =>{navigation.navigate('Home',
       {username: username,
        navigation: navigation})}}>
         <Image
