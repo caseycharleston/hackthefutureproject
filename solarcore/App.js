@@ -6,6 +6,8 @@ import Register from "./pages/Register"
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Explore from "./pages/Explore";
+import Leaderboard from "./pages/Leaderboard";
+import Events from "./pages/Events";
 
 const Stack = createNativeStackNavigator();
 
@@ -19,12 +21,18 @@ export default function App() {
         <Stack.Screen name="Login"
           component={Login}
         />
-        {/* <Stack.Screen name="Home"
-          component={Home}
-        /> */}
         <Stack.Screen name="Profile"
           component={Profile}
         />
+        <Stack.Screen name="Explore"
+          component={Explore}
+        />    
+        <Stack.Screen name="Events"
+          component={Events}
+        />   
+        <Stack.Screen name="Leaderboard"
+          component={Leaderboard}
+        />            
       </Stack.Navigator>
     </NavigationContainer>
   );

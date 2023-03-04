@@ -19,6 +19,7 @@ export function getHighestPoints() {
     userbase.forEach((user) => {
         namePointPair.push([user.getName(), user.getPoints()])
     });
+    return namePointPair;
 }
 function compare( user1, user2 ) {
     return user1.getPoints() - user2.getPoints();
