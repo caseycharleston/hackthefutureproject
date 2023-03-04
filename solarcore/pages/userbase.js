@@ -5,6 +5,8 @@ export function register(name, password) {
 }
 
 export function checkLogin(name, password) {
+    console.log(name);
+    console.log(password);
     for (let i = 0; i < userbase.length; i++) {
         if (userbase[i].getName() == name && userbase[i].getPassword() == password) {
             return true;

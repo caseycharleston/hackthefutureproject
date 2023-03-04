@@ -16,61 +16,15 @@ export default function Home({ username, navigation }) {
                 </View>
                 <View style={styles.postStyle}>
                     <Text>
-                    Eliza
+                    Casey
                     </Text>
-                    <Image style={styles.imageStyle} source={require('./eliza.jpg')}></Image>
+                    <Image style={styles.imageStyle} source={require('./casey.jpg')}></Image>
                     <Text>
-                        making an epic sustainable app
+                        my awesome sustainable hat
                     </Text>
                 </View>
             </View>
         );
-    //     } else if (username == 'Shruti') {
-    //     return (
-    //         <View>
-    //             <View>
-    //                 <Text>
-    //                 Eliza
-    //                 </Text>
-    //                 <Image source={require('./eliza.jpg')}></Image>
-    //                 <Text>
-    //                     making an epic sustainable app
-    //                 </Text>
-    //             </View>
-    //             <View>
-    //                 <Text>
-    //                 Casey
-    //                 </Text>
-    //                 <Image source={require('./casey.jpg')}></Image>
-    //                 <Text>
-    //                     my cool awesome sustainable hat
-    //                 </Text>
-    //             </View>
-    //         </View>
-    //     );
-    // } else if (username == 'Eliza') {
-    //     return (
-    //         <View>
-    //             <View>
-    //                 <Text>
-    //                 Casey
-    //                 </Text>
-    //                 <Image source={require('./casey.jpg')}></Image>
-    //                 <Text>
-    //                     my cool awesome sustainable hat
-    //                 </Text>
-    //             </View>
-    //             <View>
-    //                 <Text>
-    //                 Shruti
-    //                 </Text>
-    //                 <Image source={require('./shruti.jpg')}></Image>
-    //                 <Text>
-    //                     Throwing away trash properly at Hack the Future!
-    //                 </Text>
-    //                 </View>
-    //         </View>
-    //     );
 }
 
 const styles = StyleSheet.create({
