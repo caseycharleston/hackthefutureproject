@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'react-native';
+import {checkLogin} from './userbase';
 
 export default function Login({ navigation }) {
   const [username, setUsername] = useState('');
@@ -14,7 +15,13 @@ export default function Login({ navigation }) {
   };
 
   const handleLoginPress = () => {
-    navigation.navigate('Profile', {name: {username}})
+    // Send username and password to server for authentication
+    if (checkLogin(username, password)) {
+      navigation.navigate('Profile', {name: username})
+    } else {
+
+    }
+
   };
   
   return (
@@ -23,6 +30,9 @@ export default function Login({ navigation }) {
         style={styles.image} 
         source={require('./solarcore.png')} 
       />
+      <Text>
+        Login
+      </Text>
       <TextInput
         style={styles.input}
         placeholder="Username"
@@ -39,6 +49,9 @@ export default function Login({ navigation }) {
       <TouchableOpacity style={styles.button} onPress={handleLoginPress}>
         <Text style={styles.buttonText}>Login</Text>
       </TouchableOpacity>
+      <TouchableOpacity onPress={ () => navigation.navigate('Register')}>
+        <Text style={styles.signUpText}>Sign Up</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -49,7 +62,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#fff',
   },
-  
+
   image: {
     marginTop: 100,
     marginBottom: 50,
@@ -82,4 +95,9 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
   },
+
+  signUpText: {
+    padding: 10,
+    color: '#D19F3D',
+  }
 });

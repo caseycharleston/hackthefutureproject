@@ -1,6 +1,6 @@
 import { View, StyleSheet, TouchableOpacity, Image, Text, ScrollView } from 'react-native'
 
-export default function Profile({username, navigation, icon}) {
+export default function Profile({username, navigation}) {
     const TopBar = () => {
     return (
       <View> 

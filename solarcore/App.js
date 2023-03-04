@@ -51,10 +51,15 @@ export default function App() {
           component={March}
         />
         <Stack.Screen name="Explore"
-          screenOptions={{headerShown: false}}
+          options={{headerStyle:{backgroundColor: '#D19F3D'},
+            headerTintColor: '#fff',
+          }}
           component={Explore}
         />
         <Stack.Screen name="Leaderboard"
+            options={{headerStyle:{backgroundColor: '#D19F3D'},
+            headerTintColor: '#fff',
+          }}
           component={Leaderboard}
         />
       </Stack.Navigator>

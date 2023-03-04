@@ -16,9 +16,10 @@ export function checkLogin(name, password) {
 export function getHighestPoints() {
     userbase.sort(compare);
     const namePointPair = [];
-    userbase.forEach((user) => {
-        namePointPair.push([user.getName(), user.getPoints()])
-    });
+    for (let i = 1; i <= userbase.length; i++) {
+        namePointPair.push([i, userbase[i-1].getPoints(), userbase[i-1].getName()])
+    }
+    return namePointPair;
 }
 function compare( user1, user2 ) {
     return user2.getPoints() - user1.getPoints();
