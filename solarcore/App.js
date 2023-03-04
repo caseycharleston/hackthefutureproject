@@ -2,7 +2,6 @@ import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Login from "./pages/Login";
-import Register from "./pages/Register"
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Explore from "./pages/Explore";
@@ -16,9 +15,8 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="Register"
-          options={{headerShown: false}}
           component={Register}
         />
         <Stack.Screen name="Login"
@@ -31,36 +29,6 @@ export default function App() {
         <Stack.Screen name="Profile"
           options={{headerShown: false}}
           component={Profile}
-        />
-        <Stack.Screen name="Events"
-          options={{headerStyle:{backgroundColor: '#D19F3D'},
-            headerTintColor: '#fff',
-          }}
-          component={Events}
-        />
-        <Stack.Screen name="Hack the Future 2023"
-          options={{headerStyle:{backgroundColor: '#D19F3D'},
-            headerTintColor: '#fff',
-          }}
-          component={HTF}
-        />
-        <Stack.Screen name="March"
-          options={{headerStyle:{backgroundColor: '#D19F3D'},
-            headerTintColor: '#fff',
-          }}
-          component={March}
-        />
-        <Stack.Screen name="Explore"
-          options={{headerStyle:{backgroundColor: '#D19F3D'},
-            headerTintColor: '#fff',
-          }}
-          component={Explore}
-        />
-        <Stack.Screen name="Leaderboard"
-            options={{headerStyle:{backgroundColor: '#D19F3D'},
-            headerTintColor: '#fff',
-          }}
-          component={Leaderboard}
         />
       </Stack.Navigator>
     </NavigationContainer>
