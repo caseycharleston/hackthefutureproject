@@ -17,15 +17,14 @@ export default function Register({ navigation }) {
   const handleRegisterPress = () => {
     // Send username and password to server for authentication
     register(username, password);
-    navigation.navigate('Profile', {name: username})
+    navigation.navigate('Profile', {
+      username: username,
+      navigation: navigation,
+    })
   };
   
   return (
     <View style={styles.container}>
-        <Text style={styles.slogan}>
-        Be sustainable and grow your core
-        </Text>
-        <Text style={styles.title}>SOLARCORE</Text>
       <Image 
         style={styles.image} 
         source={require('./solarcore.png')} 
@@ -61,18 +60,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     backgroundColor: '#fff',
-  },
-
-  slogan: {
-    top: '10%',
-    fontSize: 30,
-    padding: 10,
-    textAlign: 'center',
-  },
-
-  title: {
-    top: '10%',
-    fontSize: 35,
   },
   
   image: {
